@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "net.alex.magicalbeginnings.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"ExampleMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
