@@ -20,6 +20,9 @@ public class ModItemGroups {
                         entries.add(ModItems.RYFT_CRYSTAL);
                         entries.add(ModItems.RYFT_INGOT);
 
+                        entries.add(ModItems.BLUE_BERRY);
+                        entries.add(ModItems.BLACK_BERRY);
+
                         entries.add(ModBlocks.RYFT_BLOCK);
 
                         entries.add(ModBlocks.RYFT_ORE);

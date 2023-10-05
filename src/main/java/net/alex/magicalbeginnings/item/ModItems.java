@@ -1,6 +1,7 @@
 package net.alex.magicalbeginnings.item;
 
 import net.alex.magicalbeginnings.MagicalBeginnings;
+import net.alex.magicalbeginnings.item.custom.ModFoodComponents;
 import net.fabricmc.fabric.api.item.v1.FabricItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -12,6 +13,9 @@ public class ModItems {
 
     public static Item RYFT_CRYSTAL = registerItem("ryft_crystal", new Item(new FabricItemSettings()));
     public static Item RYFT_INGOT = registerItem("ryft_ingot", new Item(new FabricItemSettings()));
+
+    public static Item BLUE_BERRY = registerItem("blue_berry", new Item(new FabricItemSettings().food(ModFoodComponents.BERRY)));
+    public static Item BLACK_BERRY = registerItem("black_berry", new Item(new FabricItemSettings().food(ModFoodComponents.BERRY)));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(MagicalBeginnings.MOD_ID, name), item);
