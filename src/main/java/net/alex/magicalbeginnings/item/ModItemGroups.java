@@ -1,6 +1,7 @@
 package net.alex.magicalbeginnings.item;
 
 import net.alex.magicalbeginnings.MagicalBeginnings;
+import net.alex.magicalbeginnings.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -18,6 +19,13 @@ public class ModItemGroups {
 
                         entries.add(ModItems.RYFT_CRYSTAL);
                         entries.add(ModItems.RYFT_INGOT);
+
+                        entries.add(ModBlocks.RYFT_BLOCK);
+
+                        entries.add(ModBlocks.RYFT_ORE);
+                        entries.add(ModBlocks.DEEPSLATE_RYFT_ORE);
+                        entries.add(ModBlocks.NETHER_RYFT_ORE);
+                        entries.add(ModBlocks.END_RYFT_ORE);
 
                     }).build());
 

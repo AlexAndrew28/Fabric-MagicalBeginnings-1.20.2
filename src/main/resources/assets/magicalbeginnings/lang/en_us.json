@@ -2,5 +2,12 @@
   "item.magicalbeginnings.ryft_crystal": "Ryft Crystal",
   "item.magicalbeginnings.ryft_ingot": "Ryft Ingot",
 
+  "block.magicalbeginnings.ryft_block": "Ryft Ingot Block",
+
+  "block.magicalbeginnings.ryft_ore": "Ryft Ore",
+  "block.magicalbeginnings.deepslate_ryft_ore": "Deepslate Ryft Ore",
+  "block.magicalbeginnings.nether_ryft_ore": "Nether Ryft Ore",
+  "block.magicalbeginnings.end_ryft_ore": "End Ryft Ore",
+
   "itemgroup.main_group": "Magical Beginnings"
 }
