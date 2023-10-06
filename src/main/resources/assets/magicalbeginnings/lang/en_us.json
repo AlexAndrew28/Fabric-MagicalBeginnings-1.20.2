@@ -1,9 +1,13 @@
 {
+  "item.magicalbeginnings.ruby_wand": "Ruby Wand",
+
   "item.magicalbeginnings.ryft_crystal": "Ryft Crystal",
   "item.magicalbeginnings.ryft_ingot": "Ryft Ingot",
 
   "item.magicalbeginnings.blue_berry": "Blueberry",
   "item.magicalbeginnings.black_berry": "Blackberry",
+
+  "item.magicalbeginnings.fireball": "Fireball",
 
   "block.magicalbeginnings.ryft_block": "Ryft Ingot Block",
 
