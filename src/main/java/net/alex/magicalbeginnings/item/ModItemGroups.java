@@ -22,8 +22,6 @@ public class ModItemGroups {
 
                         entries.add(ModItems.RUBY_WAND);
 
-                        entries.add(ModItems.FIREBALL);
-
                         entries.add(ModItems.BLUE_BERRY);
                         entries.add(ModItems.BLACK_BERRY);
 
