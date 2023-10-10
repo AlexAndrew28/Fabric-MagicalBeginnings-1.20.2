@@ -25,4 +25,8 @@ public abstract class ModelLoaderMixin {
     public void addRubyWand(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
         this.addModel(new ModelIdentifier(MagicalBeginnings.MOD_ID, "ruby_wand_3d", "inventory"));
     }
+
+    public void addSapphireWand(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
+        this.addModel(new ModelIdentifier(MagicalBeginnings.MOD_ID, "sapphire_wand_3d", "inventory"));
+    }
 }

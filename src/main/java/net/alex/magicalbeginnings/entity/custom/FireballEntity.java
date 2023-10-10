@@ -64,10 +64,13 @@ public class FireballEntity extends PersistentProjectileEntity {
         }
 
         Vec3d vec3d = this.getVelocity();
-        if (Math.abs(vec3d.x + vec3d.y + vec3d.z) < 0.3){
-            this.kill();
+        if (Math.abs(vec3d.x) < 0.2){
+            if (Math.abs(vec3d.y) < 0.2){
+                if (Math.abs(vec3d.z) < 0.2){
+                    this.kill();
+                }
+            }
         }
-
 
 
     }

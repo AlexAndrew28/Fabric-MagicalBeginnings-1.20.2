@@ -21,6 +21,7 @@ public class ModItemGroups {
                         entries.add(ModItems.RYFT_INGOT);
 
                         entries.add(ModItems.RUBY_WAND);
+                        entries.add(ModItems.SAPPHIRE_WAND);
 
                         entries.add(ModItems.BLUE_BERRY);
                         entries.add(ModItems.BLACK_BERRY);

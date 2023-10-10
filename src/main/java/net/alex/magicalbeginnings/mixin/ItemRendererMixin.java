@@ -21,4 +21,11 @@ public abstract class ItemRendererMixin {
         }
         return value;
     }
+
+    public BakedModel useSapphireWandModel(BakedModel value, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+        if (stack.isOf(ModItems.SAPPHIRE_WAND) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).mccourse$getModels().getModelManager().getModel(new ModelIdentifier(MagicalBeginnings.MOD_ID, "sapphire_wand_3d", "inventory"));
+        }
+        return value;
+    }
 }

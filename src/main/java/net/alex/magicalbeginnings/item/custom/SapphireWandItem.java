@@ -2,27 +2,27 @@ package net.alex.magicalbeginnings.item.custom;
 
 import net.alex.magicalbeginnings.entity.custom.FireballEntity;
 import net.alex.magicalbeginnings.item.ModItems;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class WandItem extends Item {
+public class SapphireWandItem extends Item {
 
 
-    public WandItem(Settings settings) {
+    public SapphireWandItem(Settings settings) {
         super(settings);
     }
 
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 
-        ItemStack wand = new ItemStack(ModItems.RUBY_WAND);
+        ItemStack wand = new ItemStack(ModItems.SAPPHIRE_WAND);
 
 
-        //user.getItemCooldownManager().set(this, 20);
+        user.getItemCooldownManager().set(this, 2);
         if (!world.isClient) {
 
             FireballEntity persistentProjectileEntity = new FireballEntity(world, user);
