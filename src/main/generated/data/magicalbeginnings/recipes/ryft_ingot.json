@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "magicalbeginnings:ryft_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "magicalbeginnings:ryft_ingot"
+  }
+}

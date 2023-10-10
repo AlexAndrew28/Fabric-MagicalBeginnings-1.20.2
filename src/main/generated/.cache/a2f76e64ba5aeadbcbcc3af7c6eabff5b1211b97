@@ -1,0 +1,5 @@
+// 1.20.2	2023-10-06T15:09:25.243025374	MagicalBeginnings/Tags for minecraft:block
+bf3ce100f86a7332c441b73d9ff3872e92444827 data/minecraft/tags/blocks/needs_diamond_tool.json
+dc1c8e9d9cf8e74bf546fc5bae03004a8412c0a6 data/magicalbeginnings/tags/blocks/ryft_ores.json
+e48bebd573a235960bbe1c4618a80e1ef60e6631 data/minecraft/tags/blocks/needs_iron_tool.json
+eeafa396e5a67cc97a2b845d1a2d570adb0864fb data/minecraft/tags/blocks/mineable/pickaxe.json
