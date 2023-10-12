@@ -1,34 +1,20 @@
 package net.alex.magicalbeginnings.entity.custom;
 
-import net.alex.magicalbeginnings.MagicalBeginnings;
 import net.alex.magicalbeginnings.entity.ModEntities;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
+import net.fabricmc.loader.impl.lib.sat4j.core.Vec;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.potion.Potions;
 import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.EntityHitResult;
-import net.minecraft.util.hit.HitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 
-public class FireballEntity extends PersistentProjectileEntity {
+public class WaterballEntity extends PersistentProjectileEntity {
 
-    public FireballEntity(World world, LivingEntity owner) {
-        super(ModEntities.FIREBALL, owner, world);
+    public WaterballEntity(World world, LivingEntity owner) {
+        super(ModEntities.WATERBALL, owner, world);
 
         double damage = 3;
         super.setDamage(damage);
@@ -36,7 +22,7 @@ public class FireballEntity extends PersistentProjectileEntity {
         setNoGravity(true);
     }
 
-    public FireballEntity(EntityType<? extends PersistentProjectileEntity> entityType, World world) {
+    public WaterballEntity(EntityType<? extends PersistentProjectileEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -78,14 +64,18 @@ public class FireballEntity extends PersistentProjectileEntity {
         double e = 116;
         double f = 30;
         for (int j = 0; j < amount; ++j) {
-            this.getWorld().addParticle(ParticleTypes.FLAME, this.getParticleX(0.5), this.getRandomBodyY(), this.getParticleZ(0.5), d, e, f);
+            this.getWorld().addParticle(ParticleTypes.BUBBLE, this.getParticleX(0.5), this.getRandomBodyY(), this.getParticleZ(0.5), d, e, f);
         }
     }
 
     @Override
     protected void onHit(LivingEntity target) {
+        Vec3d vel = this.getVelocity();
+        double x = -vel.x;
+        double z = -vel.z;
         super.onHit(target);
-        target.setOnFireFor(1);
+        target.takeKnockback(0.5, x, z);
+        //target.setOnFireFor(1);
         //world.createExplosion(target, target.getX(), target.getY(), target.getZ(), 0.5f, World.ExplosionSourceType.NONE);
     }
 }

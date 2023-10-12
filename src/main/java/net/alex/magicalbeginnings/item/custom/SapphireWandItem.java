@@ -1,6 +1,7 @@
 package net.alex.magicalbeginnings.item.custom;
 
 import net.alex.magicalbeginnings.entity.custom.FireballEntity;
+import net.alex.magicalbeginnings.entity.custom.WaterballEntity;
 import net.alex.magicalbeginnings.item.ModItems;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -25,7 +26,7 @@ public class SapphireWandItem extends Item {
         user.getItemCooldownManager().set(this, 2);
         if (!world.isClient) {
 
-            FireballEntity persistentProjectileEntity = new FireballEntity(world, user);
+            WaterballEntity persistentProjectileEntity = new WaterballEntity(world, user);
             persistentProjectileEntity.setVelocity(user, user.getPitch(), user.getYaw(), 1.5f, 1.5f, 0f);
 
             world.spawnEntity(persistentProjectileEntity);
