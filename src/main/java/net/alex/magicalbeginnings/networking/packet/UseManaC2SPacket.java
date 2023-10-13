@@ -13,7 +13,9 @@ public class UseManaC2SPacket {
     public static void receive(MinecraftServer server, ServerPlayerEntity player, ServerPlayNetworkHandler handler,
                                PacketByteBuf buf, PacketSender responseSender){
         // happens only on the server
-        ManaData.removeMana(((IEntityDataSaver) player), 50);
+        int amount = buf.readInt();
+
+        ManaData.removeMana(((IEntityDataSaver) player), amount);
 
         ManaData.syncMaxMana(((IEntityDataSaver) player).getPersistentData().getInt("maxMana"), player);
         ManaData.syncManaRegen(((IEntityDataSaver) player).getPersistentData().getInt("manaRegen"), player);

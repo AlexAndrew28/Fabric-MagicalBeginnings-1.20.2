@@ -12,9 +12,12 @@ import net.minecraft.item.*;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class RubyWandItem extends Item {
+
+    private static final int manaCost = 50;
 
 
     public RubyWandItem(Settings settings) {
@@ -32,13 +35,27 @@ public class RubyWandItem extends Item {
 
             int currentMana = ((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("currentMana");
 
-            if (currentMana > 50){
-                ClientPlayNetworking.send(ModMessages.USE_MANA, PacketByteBufs.create());
+            if (currentMana > manaCost){
+                ClientPlayNetworking.send(ModMessages.USE_MANA, PacketByteBufs.create().writeInt(manaCost));
 
                 FireballEntity persistentProjectileEntity = new FireballEntity(world, user);
+
                 persistentProjectileEntity.setVelocity(user, user.getPitch(), user.getYaw(), 1.5f, 1.5f, 0f);
 
+                Vec3d vel = persistentProjectileEntity.getVelocity();
+
+                double x = persistentProjectileEntity.getX();
+                double y = persistentProjectileEntity.getY();
+                double z = persistentProjectileEntity.getZ();
+
+                double newX = x + vel.x;
+                double newY = y + vel.y;
+                double newZ = z + vel.z;
+
+                persistentProjectileEntity.setPos(newX, newY, newZ);
+
                 world.spawnEntity(persistentProjectileEntity);
+
             }else{
                 user.sendMessage(Text.literal("Not Enough Mana"));
             }
