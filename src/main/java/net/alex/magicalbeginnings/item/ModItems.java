@@ -1,9 +1,7 @@
 package net.alex.magicalbeginnings.item;
 
 import net.alex.magicalbeginnings.MagicalBeginnings;
-import net.alex.magicalbeginnings.item.custom.ModFoodComponents;
-import net.alex.magicalbeginnings.item.custom.RubyWandItem;
-import net.alex.magicalbeginnings.item.custom.SapphireWandItem;
+import net.alex.magicalbeginnings.item.custom.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -17,6 +15,9 @@ public class ModItems {
 
     public static Item BLUE_BERRY = registerItem("blue_berry", new Item(new FabricItemSettings().food(ModFoodComponents.BERRY)));
     public static Item BLACK_BERRY = registerItem("black_berry", new Item(new FabricItemSettings().food(ModFoodComponents.BERRY)));
+
+    public static Item MAGICAL_STEW = registerItem("magical_stew", new MagicalStewItem(new FabricItemSettings().food(ModFoodComponents.MAGICAL_STEW)));
+    public static Item CURSED_STEW = registerItem("cursed_stew", new CursedStewItem(new FabricItemSettings().food(ModFoodComponents.CURSED_STEW)));
 
     public static Item RUBY_WAND = registerItem("ruby_wand", new RubyWandItem(new FabricItemSettings().maxCount(1)));
     public static Item SAPPHIRE_WAND = registerItem("sapphire_wand", new SapphireWandItem(new FabricItemSettings().maxCount(1)));

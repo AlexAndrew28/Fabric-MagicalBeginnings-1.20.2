@@ -1,5 +1,4 @@
-// 1.20.2	2023-10-06T15:09:25.248676865	MagicalBeginnings/Model Definitions
-0e9bb357641b7256afda8adf1d5c2a85568ec18b assets/magicalbeginnings/models/item/fireball.json
+// 1.20.2	2023-10-13T16:03:38.827111222	MagicalBeginnings/Model Definitions
 9946e2a08fdf57beadd1ca32b172f9a2cec78426 assets/magicalbeginnings/models/item/ryft_ingot.json
 1e0e19584418b2f7e99c47e6e064e88708b1b021 assets/magicalbeginnings/models/item/ryft_block.json
 5583f7ba5cb68bd5d11df8e425cf99088bbd65cb assets/magicalbeginnings/blockstates/end_ryft_ore.json
@@ -8,11 +7,13 @@ bf92a9cf05345d59fe4475312754030dd853d66f assets/magicalbeginnings/blockstates/ne
 c251b7449849c41c25d56d6487e4a8247df98275 assets/magicalbeginnings/blockstates/ryft_block.json
 781b042c4ce32b2b591d2359d3c9536bdf189193 assets/magicalbeginnings/models/block/end_ryft_ore.json
 338cbeac34b3d52ee73a29845d395ec8dd7ad230 assets/magicalbeginnings/models/block/ryft_block.json
+0be0232b542e9e270ab6c364893cdc69b214eaf3 assets/magicalbeginnings/models/item/cursed_stew.json
 9efcb369115b2d07c8cf69d49552ae27b70fb942 assets/magicalbeginnings/models/item/nether_ryft_ore.json
 77aa688f13219ffcce33c5da291a31b13759f59e assets/magicalbeginnings/blockstates/deepslate_ryft_ore.json
 b23dd165b8b53a866a7d53caeaaea88673733e2d assets/magicalbeginnings/models/item/end_ryft_ore.json
 db7b2fc3855ad074b5f84e1063308be7e9d9b3ed assets/magicalbeginnings/models/item/deepslate_ryft_ore.json
 a7c38286b028c6ba7656c032fb4d885b2a212cc2 assets/magicalbeginnings/models/item/black_berry.json
+b4e072ab1ed388737d6d1f4db4dcf1995265ad80 assets/magicalbeginnings/models/item/magical_stew.json
 9a0fd5f96af7f95351e6909060dad865bcf286da assets/magicalbeginnings/models/block/nether_ryft_ore.json
 0ca64cbde1a921a4cf4d9c38e3c9433009f466d1 assets/magicalbeginnings/models/block/deepslate_ryft_ore.json
 f6cfcd7ed2e2b9cad35f59b1b97bfee63150c0d4 assets/magicalbeginnings/blockstates/ryft_ore.json

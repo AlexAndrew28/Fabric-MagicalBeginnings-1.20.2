@@ -26,6 +26,9 @@ public class ModItemGroups {
                         entries.add(ModItems.BLUE_BERRY);
                         entries.add(ModItems.BLACK_BERRY);
 
+                        entries.add(ModItems.MAGICAL_STEW);
+                        entries.add(ModItems.CURSED_STEW);
+
                         entries.add(ModBlocks.RYFT_BLOCK);
 
                         entries.add(ModBlocks.RYFT_ORE);
