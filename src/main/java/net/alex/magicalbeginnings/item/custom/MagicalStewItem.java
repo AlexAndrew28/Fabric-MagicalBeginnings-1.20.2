@@ -1,6 +1,7 @@
 package net.alex.magicalbeginnings.item.custom;
 
 import net.alex.magicalbeginnings.util.IEntityDataSaver;
+import net.alex.magicalbeginnings.util.MagicExpData;
 import net.alex.magicalbeginnings.util.ManaData;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.FoodComponent;
@@ -20,8 +21,9 @@ public class MagicalStewItem extends Item {
 
         if (!world.isClient) {
             IEntityDataSaver dataPlayer = ((IEntityDataSaver) user);
-            ManaData.addMaxMana(dataPlayer, 100);
-            ManaData.addManaRegen(dataPlayer, 1);
+            ManaData.addMaxMana(dataPlayer, 0);
+            ManaData.addManaRegen(dataPlayer, 0);
+            MagicExpData.increaseMagicExp(dataPlayer, 0);
         }
 
         return itemStack;

@@ -20,6 +20,7 @@ import net.minecraft.world.World;
 public class SapphireWandItem extends Item {
 
     private static final int manaCost = 50;
+    private static final int expGain = 10;
 
 
     public SapphireWandItem(Settings settings) {
@@ -38,6 +39,7 @@ public class SapphireWandItem extends Item {
 
             if (currentMana > manaCost) {
                 ClientPlayNetworking.send(ModMessages.USE_MANA, PacketByteBufs.create().writeInt(manaCost));
+                ClientPlayNetworking.send(ModMessages.INCREASE_MAGIC_EXP, PacketByteBufs.create().writeInt(expGain));
 
                 WaterballEntity persistentProjectileEntity = new WaterballEntity(world, user);
                 persistentProjectileEntity.setVelocity(user, user.getPitch(), user.getYaw(), 1.5f, 1.5f, 0f);

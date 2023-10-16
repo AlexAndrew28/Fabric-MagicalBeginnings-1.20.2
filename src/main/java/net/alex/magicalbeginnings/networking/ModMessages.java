@@ -1,10 +1,7 @@
 package net.alex.magicalbeginnings.networking;
 
 import net.alex.magicalbeginnings.MagicalBeginnings;
-import net.alex.magicalbeginnings.networking.packet.CurrentManaSyncDataS2CPacket;
-import net.alex.magicalbeginnings.networking.packet.ManaRegenSyncDataS2CPacket;
-import net.alex.magicalbeginnings.networking.packet.MaxManaSyncDataS2CPacket;
-import net.alex.magicalbeginnings.networking.packet.UseManaC2SPacket;
+import net.alex.magicalbeginnings.networking.packet.*;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.util.Identifier;
@@ -15,9 +12,14 @@ public class ModMessages {
     public static Identifier MAX_MANA_SYNC = new Identifier(MagicalBeginnings.MOD_ID, "max_mana_sync");
     public static Identifier MANA_REGEN_SYNC = new Identifier(MagicalBeginnings.MOD_ID, "mana_regen_sync");
 
+    public static Identifier MAGIC_EXP_LEVEL_SYNC = new Identifier(MagicalBeginnings.MOD_ID, "magic_exp_level_sync");
+    public static Identifier MAGIC_EXP_LEVEL_CURRENT_SYNC = new Identifier(MagicalBeginnings.MOD_ID, "magic_exp_level_current_sync");
+    public static Identifier MAGIC_EXP_LEVEL_NEEDED_SYNC = new Identifier(MagicalBeginnings.MOD_ID, "magic_exp_level_needed_sync");
+    public static Identifier INCREASE_MAGIC_EXP = new Identifier(MagicalBeginnings.MOD_ID, "increase_magic_exp");
 
     public static void registerC2SPackets(){
         ServerPlayNetworking.registerGlobalReceiver(USE_MANA, UseManaC2SPacket::receive);
+        ServerPlayNetworking.registerGlobalReceiver(INCREASE_MAGIC_EXP, IncreaseMagicExpC2SPacket::receive);
     }
 
     public static void registerS2CPackets(){
@@ -25,6 +27,9 @@ public class ModMessages {
         ClientPlayNetworking.registerGlobalReceiver(MAX_MANA_SYNC, MaxManaSyncDataS2CPacket::receive);
         ClientPlayNetworking.registerGlobalReceiver(MANA_REGEN_SYNC, ManaRegenSyncDataS2CPacket::receive);
 
+        ClientPlayNetworking.registerGlobalReceiver(MAGIC_EXP_LEVEL_SYNC, MagicExpLevelSyncDataS2CPacket::receive);
+        ClientPlayNetworking.registerGlobalReceiver(MAGIC_EXP_LEVEL_CURRENT_SYNC, MagicExpLevelCurrentSyncDataS2CPacket::receive);
+        ClientPlayNetworking.registerGlobalReceiver(MAGIC_EXP_LEVEL_NEEDED_SYNC, MagicExpLevelNeededSyncDataS2CPacket::receive);
     }
 
 }

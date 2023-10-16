@@ -1,5 +1,6 @@
 package net.alex.magicalbeginnings;
 
+import net.alex.magicalbeginnings.client.MagicExpHubOverlay;
 import net.alex.magicalbeginnings.client.ManaHubOverlay;
 import net.alex.magicalbeginnings.entity.ModEntities;
 import net.alex.magicalbeginnings.entity.client.FireballRenderer;
@@ -21,11 +22,11 @@ public class MagicalBeginningsClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.FIREBALL, FireballRenderer::new);
         EntityRendererRegistry.register(ModEntities.WATERBALL, WaterballRenderer::new);
-        //EntityModelLayerRegistry.registerModelLayer(ModModelLayers.FIREBALL, FireballModel::getTexturedModelData);
 
         ModMessages.registerS2CPackets();
 
         HudRenderCallback.EVENT.register(new ManaHubOverlay());
+        HudRenderCallback.EVENT.register(new MagicExpHubOverlay());
 
         HandledScreens.register(ModScreenHandlers.RYFT_IMBUING_SCREEN_HANDLER, RyftImbuingScreen::new);
     }

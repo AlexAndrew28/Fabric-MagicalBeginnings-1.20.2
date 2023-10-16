@@ -1,6 +1,7 @@
 package net.alex.magicalbeginnings.item.custom;
 
 import net.alex.magicalbeginnings.util.IEntityDataSaver;
+import net.alex.magicalbeginnings.util.MagicExpData;
 import net.alex.magicalbeginnings.util.ManaData;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
@@ -19,6 +20,7 @@ public class CursedStewItem extends Item {
         if (!world.isClient) {
             IEntityDataSaver dataPlayer = ((IEntityDataSaver) user);
             ManaData.resetMana(dataPlayer);
+            MagicExpData.resetMagicExp(dataPlayer);
         }
 
         return itemStack;

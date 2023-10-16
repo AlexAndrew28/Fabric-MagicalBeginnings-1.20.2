@@ -1,6 +1,7 @@
 package net.alex.magicalbeginnings.event;
 
 import net.alex.magicalbeginnings.util.IEntityDataSaver;
+import net.alex.magicalbeginnings.util.MagicExpData;
 import net.alex.magicalbeginnings.util.ManaData;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.MinecraftServer;
@@ -14,8 +15,6 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick {
         for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
             IEntityDataSaver dataPlayer = ((IEntityDataSaver) player);
             ManaData.regenMana(dataPlayer);
-
-            //player.sendMessage(Text.literal("New Mana" + ((IEntityDataSaver) player).getPersistentData().getInt("currentMana")));
         }
     }
 }

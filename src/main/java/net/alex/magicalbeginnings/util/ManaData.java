@@ -24,7 +24,11 @@ public class ManaData {
         NbtCompound nbt = player.getPersistentData();
         int maxMana = nbt.getInt("maxMana");
 
-        maxMana += amount;
+        if (maxMana == 0 && amount == 0){
+            maxMana = 100;
+        }else{
+            maxMana += amount;
+        }
 
         nbt.putInt("maxMana", maxMana);
 
@@ -35,8 +39,12 @@ public class ManaData {
         NbtCompound nbt = player.getPersistentData();
         int manaRegen = nbt.getInt("manaRegen");
 
-        manaRegen += amount;
-
+        if (manaRegen == 0 && amount == 0){
+            manaRegen = 1;
+        }
+        else{
+            manaRegen += amount;
+        }
         nbt.putInt("manaRegen", manaRegen);
 
         syncManaRegen(manaRegen, (ServerPlayerEntity) player);
