@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "item": "magicalbeginnings:fire_focus"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "   ",
+    " f ",
+    " s "
+  ],
+  "result": {
+    "item": "magicalbeginnings:ruby_wand"
+  },
+  "show_notification": true
+}

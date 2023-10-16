@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "magicalbeginnings:nature_essence"
+    },
+    {
+      "item": "magicalbeginnings:empty_focus"
+    }
+  ],
+  "result": {
+    "item": "magicalbeginnings:nature_focus"
+  }
+}

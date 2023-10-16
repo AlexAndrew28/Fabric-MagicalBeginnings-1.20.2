@@ -34,5 +34,29 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MAGICAL_STEW, Models.GENERATED);
         itemModelGenerator.register(ModItems.CURSED_STEW, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.FOCUS_SOCKET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.EMPTY_FOCUS, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.AIR_FOCUS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.AIR_ESSENCE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.CORRUPTION_FOCUS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CORRUPTION_ESSENCE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.FIRE_FOCUS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FIRE_ESSENCE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.MAGIC_FOCUS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MAGIC_ESSENCE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.NATURE_FOCUS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NATURE_ESSENCE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.NECROTIC_FOCUS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NECROTIC_ESSENCE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.WATER_FOCUS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WATER_ESSENCE, Models.GENERATED);
+
     }
 }

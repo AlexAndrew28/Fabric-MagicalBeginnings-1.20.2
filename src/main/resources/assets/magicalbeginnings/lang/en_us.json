@@ -10,6 +10,25 @@
   "item.magicalbeginnings.magical_stew": "Magical Stew",
   "item.magicalbeginnings.cursed_stew": "Cursed Stew",
 
+  "item.magicalbeginnings.empty_focus": "Empty Focus",
+  "item.magicalbeginnings.focus_socket": "Focus Socket",
+
+  "item.magicalbeginnings.air_focus": "Air Focus",
+  "item.magicalbeginnings.magic_focus": "Magic Focus",
+  "item.magicalbeginnings.nature_focus": "Nature Focus",
+  "item.magicalbeginnings.necrotic_focus": "Necrotic Focus",
+  "item.magicalbeginnings.water_focus": "Water Focus",
+  "item.magicalbeginnings.corruption_focus": "Corruption Focus",
+  "item.magicalbeginnings.fire_focus": "Fire Focus",
+
+  "item.magicalbeginnings.air_essence": "Air Essence",
+  "item.magicalbeginnings.magic_essence": "Magic Essence",
+  "item.magicalbeginnings.nature_essence": "Nature Essence",
+  "item.magicalbeginnings.necrotic_essence": "Necrotic Essence",
+  "item.magicalbeginnings.water_essence": "Water Essence",
+  "item.magicalbeginnings.corruption_essence": "Corruption Essence",
+  "item.magicalbeginnings.fire_essence": "Fire Essence",
+
   "block.magicalbeginnings.ryft_block": "Ryft Ingot Block",
 
   "block.magicalbeginnings.ryft_ore": "Ryft Ore",

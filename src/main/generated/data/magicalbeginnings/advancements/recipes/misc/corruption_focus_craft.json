@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_iron_ingot": {
+    "has_corruption_essence": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:iron_ingot"
+              "magicalbeginnings:corruption_essence"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_ryft_crystal": {
+    "has_empty_focus": {
       "conditions": {
         "items": [
           {
             "items": [
-              "magicalbeginnings:ryft_crystal"
+              "magicalbeginnings:empty_focus"
             ]
           }
         ]
@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ryft_ingot_craft"
+        "recipe": "minecraft:corruption_focus_craft"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -35,13 +35,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ryft_crystal",
-      "has_iron_ingot"
+      "has_corruption_essence",
+      "has_empty_focus"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ryft_ingot_craft"
+      "minecraft:corruption_focus_craft"
     ]
   },
   "sends_telemetry_event": false

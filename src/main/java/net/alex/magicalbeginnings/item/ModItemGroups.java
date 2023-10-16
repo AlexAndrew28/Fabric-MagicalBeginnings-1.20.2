@@ -38,6 +38,25 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.RYFT_IMBUING_STATION);
 
+                        entries.add(ModItems.EMPTY_FOCUS);
+                        entries.add(ModItems.FOCUS_SOCKET);
+
+                        entries.add(ModItems.CORRUPTION_FOCUS);
+                        entries.add(ModItems.FIRE_FOCUS);
+                        entries.add(ModItems.WATER_FOCUS);
+                        entries.add(ModItems.AIR_FOCUS);
+                        entries.add(ModItems.NATURE_FOCUS);
+                        entries.add(ModItems.NECROTIC_FOCUS);
+                        entries.add(ModItems.MAGIC_FOCUS);
+
+                        entries.add(ModItems.CORRUPTION_ESSENCE);
+                        entries.add(ModItems.FIRE_ESSENCE);
+                        entries.add(ModItems.WATER_ESSENCE);
+                        entries.add(ModItems.AIR_ESSENCE);
+                        entries.add(ModItems.NATURE_ESSENCE);
+                        entries.add(ModItems.NECROTIC_ESSENCE);
+                        entries.add(ModItems.MAGIC_ESSENCE);
+
                     }).build());
 
     public static void registerItemGroups(){

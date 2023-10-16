@@ -1,0 +1,61 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_focus_socket": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magicalbeginnings:focus_socket"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_gold_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:gold_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ryft_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "magicalbeginnings:ryft_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:empty_focus_craft"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gold_ingot",
+      "has_ryft_ingot",
+      "has_focus_socket"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:empty_focus_craft"
+    ]
+  },
+  "sends_telemetry_event": false
+}

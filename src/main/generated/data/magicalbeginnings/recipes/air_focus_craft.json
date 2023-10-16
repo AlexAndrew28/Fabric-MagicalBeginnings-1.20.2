@@ -3,13 +3,13 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "magicalbeginnings:ryft_crystal"
+      "item": "magicalbeginnings:air_essence"
     },
     {
-      "item": "minecraft:iron_ingot"
+      "item": "magicalbeginnings:empty_focus"
     }
   ],
   "result": {
-    "item": "magicalbeginnings:ryft_ingot"
+    "item": "magicalbeginnings:air_focus"
   }
 }

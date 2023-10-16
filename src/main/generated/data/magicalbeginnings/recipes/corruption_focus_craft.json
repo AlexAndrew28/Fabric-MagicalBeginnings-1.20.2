@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "magicalbeginnings:corruption_essence"
+    },
+    {
+      "item": "magicalbeginnings:empty_focus"
+    }
+  ],
+  "result": {
+    "item": "magicalbeginnings:corruption_focus"
+  }
+}

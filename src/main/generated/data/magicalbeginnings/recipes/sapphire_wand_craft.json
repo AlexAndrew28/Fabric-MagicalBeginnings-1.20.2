@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "w": {
+      "item": "magicalbeginnings:water_focus"
+    }
+  },
+  "pattern": [
+    "   ",
+    " w ",
+    " s "
+  ],
+  "result": {
+    "item": "magicalbeginnings:sapphire_wand"
+  },
+  "show_notification": true
+}
