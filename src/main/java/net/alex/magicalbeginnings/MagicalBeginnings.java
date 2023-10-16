@@ -1,10 +1,12 @@
 package net.alex.magicalbeginnings;
 
 import net.alex.magicalbeginnings.block.ModBlocks;
+import net.alex.magicalbeginnings.block.entity.ModBlockEntities;
 import net.alex.magicalbeginnings.event.PlayerTickHandler;
 import net.alex.magicalbeginnings.item.ModItemGroups;
 import net.alex.magicalbeginnings.item.ModItems;
 import net.alex.magicalbeginnings.networking.ModMessages;
+import net.alex.magicalbeginnings.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -21,7 +23,11 @@ public class MagicalBeginnings implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 
+		ModBlockEntities.registerBlockEntities();
+
 		ModMessages.registerC2SPackets();
+
+		ModScreenHandlers.registerScreenHandlers();
 
 		ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 

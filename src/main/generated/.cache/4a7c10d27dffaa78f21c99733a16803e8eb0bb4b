@@ -1,9 +1,11 @@
-// 1.20.2	2023-10-13T16:03:38.827111222	MagicalBeginnings/Model Definitions
+// 1.20.2	2023-10-15T23:34:00.526044289	MagicalBeginnings/Model Definitions
 9946e2a08fdf57beadd1ca32b172f9a2cec78426 assets/magicalbeginnings/models/item/ryft_ingot.json
 1e0e19584418b2f7e99c47e6e064e88708b1b021 assets/magicalbeginnings/models/item/ryft_block.json
 5583f7ba5cb68bd5d11df8e425cf99088bbd65cb assets/magicalbeginnings/blockstates/end_ryft_ore.json
 e6aad03334fa0c1b46432265de39e2fadd166b2a assets/magicalbeginnings/models/item/ryft_crystal.json
+45dad738f0d3ebec36cd27987246058b38227c7a assets/magicalbeginnings/blockstates/ryft_imbuing_station.json
 bf92a9cf05345d59fe4475312754030dd853d66f assets/magicalbeginnings/blockstates/nether_ryft_ore.json
+51db251d3de4d85b05fe4918cc8993121a5afa95 assets/magicalbeginnings/models/item/ryft_imbuing_station.json
 c251b7449849c41c25d56d6487e4a8247df98275 assets/magicalbeginnings/blockstates/ryft_block.json
 781b042c4ce32b2b591d2359d3c9536bdf189193 assets/magicalbeginnings/models/block/end_ryft_ore.json
 338cbeac34b3d52ee73a29845d395ec8dd7ad230 assets/magicalbeginnings/models/block/ryft_block.json

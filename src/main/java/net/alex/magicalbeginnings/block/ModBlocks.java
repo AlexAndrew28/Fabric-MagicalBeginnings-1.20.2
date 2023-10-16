@@ -1,6 +1,7 @@
 package net.alex.magicalbeginnings.block;
 
 import net.alex.magicalbeginnings.MagicalBeginnings;
+import net.alex.magicalbeginnings.block.custom.RyftImbuingStationBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -30,6 +31,9 @@ public class ModBlocks {
 
     public static final Block END_RYFT_ORE = registerBlock("end_ryft_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.END_STONE).strength(5f), UniformIntProvider.create(5, 7)));
+
+    public static final Block RYFT_IMBUING_STATION = registerBlock("ryft_imbuing_station",
+            new RyftImbuingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);

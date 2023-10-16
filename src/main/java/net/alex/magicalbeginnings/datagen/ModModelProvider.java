@@ -21,6 +21,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.NETHER_RYFT_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.END_RYFT_ORE);
 
+        blockStateModelGenerator.registerSimpleState(ModBlocks.RYFT_IMBUING_STATION);
+
     }
 
     @Override

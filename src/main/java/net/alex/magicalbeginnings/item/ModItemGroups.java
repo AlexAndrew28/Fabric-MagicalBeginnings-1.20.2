@@ -36,6 +36,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.NETHER_RYFT_ORE);
                         entries.add(ModBlocks.END_RYFT_ORE);
 
+                        entries.add(ModBlocks.RYFT_IMBUING_STATION);
+
                     }).build());
 
     public static void registerItemGroups(){
