@@ -6,10 +6,24 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.PacketByteBuf;
 
+/**
+ * A packet that syncs mana
+ * Goes from server to client
+ */
 public class CurrentManaSyncDataS2CPacket {
+
+    /**
+     * Update the saved value for the current mana
+     *
+     * @param client the client
+     * @param handler a network handler
+     * @param buf the packet byte buf that stores data
+     * @param responseSender a packet sender
+     */
     public static void receive(MinecraftClient client, ClientPlayNetworkHandler handler,
                                PacketByteBuf buf, PacketSender responseSender){
         if(client.player != null){
+            // update value for current mana
             ((IEntityDataSaver) client.player).getPersistentData().putInt("currentMana", buf.readInt());
         }
 

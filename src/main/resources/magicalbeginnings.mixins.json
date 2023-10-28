@@ -3,7 +3,6 @@
 	"package": "net.alex.magicalbeginnings.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin",
 		"ModEntityDataSaverMixin"
 	],
 	"client": [

@@ -13,6 +13,9 @@ public class ModScreenHandlers {
             Registry.register(Registries.SCREEN_HANDLER, new Identifier(MagicalBeginnings.MOD_ID, "ryft_imbuing"),
                     new ExtendedScreenHandlerType<>(RyftImbuingScreenHandler::new));
 
+    /**
+     * Logs that the screen handlers are being registered
+     */
     public static void registerScreenHandlers(){
         MagicalBeginnings.LOGGER.info("Registering Screen Handlers for " + MagicalBeginnings.MOD_ID);
     }

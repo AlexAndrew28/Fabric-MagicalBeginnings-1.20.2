@@ -62,6 +62,9 @@ public class ModItemGroups {
 
                     }).build());
 
+    /**
+     * Logs that the item groups are being registered
+     */
     public static void registerItemGroups(){
         MagicalBeginnings.LOGGER.info("Registering Item Groups for " + MagicalBeginnings.MOD_ID);
     }

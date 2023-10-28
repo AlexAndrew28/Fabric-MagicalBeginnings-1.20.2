@@ -27,7 +27,15 @@ public class SapphireWandItem extends Item {
         super(settings);
     }
 
-
+    /**
+     * When the item is used (player right clicks when this item is in their hand) this method is called
+     * Effect: shoots a "waterball" that damages enemies
+     *
+     * @param world the world the item was used in
+     * @param user the player who used the item
+     * @param hand the hand used
+     * @return
+     */
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 
         ItemStack wand = new ItemStack(ModItems.SAPPHIRE_WAND);

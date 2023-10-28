@@ -17,6 +17,7 @@ import net.minecraft.world.World;
 
 public class RubyWandItem extends Item {
 
+    //TODO: get rid of hardcoded values
     private static final int manaCost = 50;
     private static final int expGain = 10;
 
@@ -25,25 +26,36 @@ public class RubyWandItem extends Item {
         super(settings);
     }
 
-
+    /**
+     * When this item is used (right click when in the players hand) this method will call
+     * Effect: shoots a firebolt that damages enemies
+     *
+     * @param world the world the item was used in
+     * @param user the player who used the item
+     * @param hand the hand used
+     * @return the success of the action
+     */
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 
         ItemStack wand = new ItemStack(ModItems.RUBY_WAND);
 
-
+        // cooldown for using the item
         user.getItemCooldownManager().set(this, 2);
         if (!world.isClient) {
 
             int currentMana = ((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("currentMana");
 
+            // if the player has enough mana
             if (currentMana > manaCost){
+                // update player stored values
                 ClientPlayNetworking.send(ModMessages.USE_MANA, PacketByteBufs.create().writeInt(manaCost));
-
                 ClientPlayNetworking.send(ModMessages.INCREASE_MAGIC_EXP, PacketByteBufs.create().writeInt(expGain));
+
+                // create a new proj
                 FireballEntity persistentProjectileEntity = new FireballEntity(world, user);
 
+                // move the proj along its path so it spawns in front of the player instead of inside
                 persistentProjectileEntity.setVelocity(user, user.getPitch(), user.getYaw(), 1.5f, 1.5f, 0f);
-
                 Vec3d vel = persistentProjectileEntity.getVelocity();
 
                 double x = persistentProjectileEntity.getX();

@@ -15,7 +15,8 @@ public class CursedStewItem extends Item {
     }
 
     /**
-     * Called when the item has been eaten to remove reset all mana stats
+     * Called when the item has been eaten
+     * Effect: reset all mana stats
      *
      * @param stack the item
      * @param world the world

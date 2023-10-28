@@ -21,11 +21,29 @@ public abstract class ModelLoaderMixin {
     @Shadow
     protected abstract void addModel(ModelIdentifier modelId);
 
+    /**
+     * Overrides the model loader for the ruby wand
+     *
+     * @param blockColors the colours
+     * @param profiler a profiler
+     * @param jsonUnbakedModels unbaked model
+     * @param blockStates the state
+     * @param ci callback information
+     */
     @Inject(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/model/ModelLoader;addModel(Lnet/minecraft/client/util/ModelIdentifier;)V", ordinal = 3, shift = At.Shift.AFTER))
     public void addRubyWand(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
         this.addModel(new ModelIdentifier(MagicalBeginnings.MOD_ID, "ruby_wand_3d", "inventory"));
     }
 
+    /**
+     * Overrides the model loader for the sapphire wand
+     *
+     * @param blockColors the colours
+     * @param profiler a profiler
+     * @param jsonUnbakedModels unbaked model
+     * @param blockStates the state
+     * @param ci callback information
+     */
     public void addSapphireWand(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
         this.addModel(new ModelIdentifier(MagicalBeginnings.MOD_ID, "sapphire_wand_3d", "inventory"));
     }

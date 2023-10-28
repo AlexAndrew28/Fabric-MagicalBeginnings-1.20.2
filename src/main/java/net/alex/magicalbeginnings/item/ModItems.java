@@ -43,11 +43,21 @@ public class ModItems {
     public static Item CORRUPTION_ESSENCE = registerItem("corruption_essence", new Item(new FabricItemSettings()));
     public static Item FIRE_ESSENCE = registerItem("fire_essence", new Item(new FabricItemSettings()));
 
-
+    /**
+     * Registers a new item
+     *
+     * @param name the name of the item
+     * @param item the item
+     * @return a registered item
+     */
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(MagicalBeginnings.MOD_ID, name), item);
     }
 
+    /**
+     * Logs the fact that items are being registered
+     *
+     */
     public static void registerModItems(){
         MagicalBeginnings.LOGGER.info("Registering Mod Items for " + MagicalBeginnings.MOD_ID);
     }

@@ -17,11 +17,17 @@ public class ModMessages {
     public static Identifier MAGIC_EXP_LEVEL_NEEDED_SYNC = new Identifier(MagicalBeginnings.MOD_ID, "magic_exp_level_needed_sync");
     public static Identifier INCREASE_MAGIC_EXP = new Identifier(MagicalBeginnings.MOD_ID, "increase_magic_exp");
 
+    /**
+     * Registers all the packets that go from client to server
+     */
     public static void registerC2SPackets(){
         ServerPlayNetworking.registerGlobalReceiver(USE_MANA, UseManaC2SPacket::receive);
         ServerPlayNetworking.registerGlobalReceiver(INCREASE_MAGIC_EXP, IncreaseMagicExpC2SPacket::receive);
     }
 
+    /**
+     * Registers all the packets that go from server to client
+     */
     public static void registerS2CPackets(){
         ClientPlayNetworking.registerGlobalReceiver(CURRENT_MANA_SYNC, CurrentManaSyncDataS2CPacket::receive);
         ClientPlayNetworking.registerGlobalReceiver(MAX_MANA_SYNC, MaxManaSyncDataS2CPacket::receive);

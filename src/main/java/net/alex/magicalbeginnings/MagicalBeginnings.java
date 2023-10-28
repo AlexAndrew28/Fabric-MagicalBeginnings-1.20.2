@@ -17,6 +17,9 @@ public class MagicalBeginnings implements ModInitializer {
 	public static final String MOD_ID = "magicalbeginnings";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	/**
+	 * Runs on initialise. Initialises and registers the required parts
+	 */
 	@Override
 	public void onInitialize() {
 		ModItemGroups.registerItemGroups();
@@ -29,6 +32,7 @@ public class MagicalBeginnings implements ModInitializer {
 
 		ModScreenHandlers.registerScreenHandlers();
 
+		// start the tick updates
 		ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 
 	}
