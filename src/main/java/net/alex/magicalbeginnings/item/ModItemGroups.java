@@ -24,6 +24,7 @@ public class ModItemGroups {
                         entries.add(ModItems.SAPPHIRE_WAND);
                         entries.add(ModItems.EARTH_AMULET);
                         entries.add(ModItems.SKY_AMULET);
+                        entries.add(ModItems.EARTH_WAND);
 
                         entries.add(ModItems.BLUE_BERRY);
                         entries.add(ModItems.BLACK_BERRY);

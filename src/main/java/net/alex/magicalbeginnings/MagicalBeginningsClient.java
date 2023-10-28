@@ -3,6 +3,7 @@ package net.alex.magicalbeginnings;
 import net.alex.magicalbeginnings.client.MagicExpHubOverlay;
 import net.alex.magicalbeginnings.client.ManaHubOverlay;
 import net.alex.magicalbeginnings.entity.ModEntities;
+import net.alex.magicalbeginnings.entity.client.DigProjectileRenderer;
 import net.alex.magicalbeginnings.entity.client.FireballRenderer;
 import net.alex.magicalbeginnings.entity.client.ModModelLayers;
 import net.alex.magicalbeginnings.entity.client.WaterballRenderer;
@@ -22,6 +23,7 @@ public class MagicalBeginningsClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.FIREBALL, FireballRenderer::new);
         EntityRendererRegistry.register(ModEntities.WATERBALL, WaterballRenderer::new);
+        EntityRendererRegistry.register(ModEntities.DIG_PROJECTILE, DigProjectileRenderer::new);
 
         ModMessages.registerS2CPackets();
 
