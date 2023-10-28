@@ -30,9 +30,11 @@ public class FireballEntity extends PersistentProjectileEntity {
     public FireballEntity(World world, LivingEntity owner) {
         super(ModEntities.FIREBALL, owner, world);
 
+        // base damage of the fireball
         double damage = 3;
         super.setDamage(damage);
 
+        // spells don't have gravity
         setNoGravity(true);
     }
 
@@ -45,16 +47,29 @@ public class FireballEntity extends PersistentProjectileEntity {
         return null;
     }
 
+    /**
+     * Called when the projectile hits a block
+     *
+     * @param blockHitResult data about the block hit
+     */
     protected void onBlockHit(BlockHitResult blockHitResult) {
         super.onBlockHit(blockHitResult);
         this.discard();
     }
 
+    /**
+     * get the drag coefficient for projectile as it travels through water
+     *
+     * @return drag coefficient
+     */
     protected float getDragInWater() {
-        //this.kill();
-        return 1.0f;
+        // fire cannot go through water
+        return 0.0f;
     }
 
+    /**
+     * called every tick to update position of projectile
+     */
     public void tick() {
         super.tick();
         if (this.getWorld().isClient) {
@@ -73,6 +88,11 @@ public class FireballEntity extends PersistentProjectileEntity {
 
     }
 
+    /**
+     * spawns particles around the projectile as it flies for effect
+     *
+     * @param amount amount of particles to spawn
+     */
     private void spawnParticles(int amount) {
         double d = 230;
         double e = 116;
@@ -82,6 +102,11 @@ public class FireballEntity extends PersistentProjectileEntity {
         }
     }
 
+    /**
+     * Behaviour when the projectile hits an entity (sets target on fire)
+     *
+     * @param target the entity that got hit
+     */
     @Override
     protected void onHit(LivingEntity target) {
         super.onHit(target);

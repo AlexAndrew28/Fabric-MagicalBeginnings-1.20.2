@@ -14,6 +14,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModEntities {
+
+    // register fireball entity
     public static final EntityType<FireballEntity> FIREBALL = Registry.register(
             Registries.ENTITY_TYPE,
             new Identifier(MagicalBeginnings.MOD_ID,"fireball"),
@@ -21,6 +23,7 @@ public class ModEntities {
                     .dimensions(EntityDimensions.fixed(0.5F, 0.5F))
                     .build());
 
+    // register waterball entity
     public static final EntityType<WaterballEntity> WATERBALL = Registry.register(
             Registries.ENTITY_TYPE,
             new Identifier(MagicalBeginnings.MOD_ID,"waterball"),
@@ -28,6 +31,7 @@ public class ModEntities {
                     .dimensions(EntityDimensions.fixed(0.5F, 0.5F))
                     .build());
 
+    // register proj dig entity
     public static final EntityType<DigProjectileEntity> DIG_PROJECTILE = Registry.register(
             Registries.ENTITY_TYPE,
             new Identifier(MagicalBeginnings.MOD_ID,"dig_projectile"),

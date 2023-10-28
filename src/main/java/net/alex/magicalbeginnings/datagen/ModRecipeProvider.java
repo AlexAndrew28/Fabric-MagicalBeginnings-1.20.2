@@ -27,6 +27,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         super(output);
     }
 
+    /**
+     * Generate recipe files for mod recipes
+     *
+     * @param exporter an exporter
+     */
     @Override
     public void generate(RecipeExporter exporter) {
         offerSmelting(exporter, RYFT_SMELTABLES, RecipeCategory.MISC, ModItems.RYFT_CRYSTAL, 0.7f, 200, "ryft");
@@ -34,6 +39,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.RYFT_INGOT, RecipeCategory.MISC, ModBlocks.RYFT_BLOCK);
 
+        // shaped recipe - create focus socket
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.FOCUS_SOCKET, 1)
                 .pattern("ODO")
                 .pattern("DOD")
@@ -44,6 +50,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.OBSIDIAN), conditionsFromItem(Items.OBSIDIAN))
                 .offerTo(exporter, new Identifier("focus_socket_craft"));
 
+        // shaped recipe - create empty focus
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.EMPTY_FOCUS, 1)
                 .pattern("GRG")
                 .pattern("RFR")
@@ -56,6 +63,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.FOCUS_SOCKET), conditionsFromItem(ModItems.FOCUS_SOCKET))
                 .offerTo(exporter, new Identifier("empty_focus_craft"));
 
+        // shaped recipe - create ruby wand
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RUBY_WAND, 1)
                 .pattern("   ")
                 .pattern(" f ")
@@ -66,6 +74,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.FIRE_FOCUS), conditionsFromItem(ModItems.FIRE_FOCUS))
                 .offerTo(exporter, new Identifier("ruby_wand_craft"));
 
+        // shaped recipe - create sapphire wand
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SAPPHIRE_WAND, 1)
                 .pattern("   ")
                 .pattern(" w ")
@@ -76,42 +85,49 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.WATER_FOCUS), conditionsFromItem(ModItems.WATER_FOCUS))
                 .offerTo(exporter, new Identifier("sapphire_wand_craft"));
 
+        // shapeless recipe - create fire focus
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.FIRE_FOCUS, 1)
                 .input(ModItems.FIRE_ESSENCE)
                 .input(ModItems.EMPTY_FOCUS)
                 .criterion(hasItem(ModItems.FIRE_ESSENCE), conditionsFromItem(ModItems.FIRE_ESSENCE))
                 .criterion(hasItem(ModItems.EMPTY_FOCUS), conditionsFromItem(ModItems.EMPTY_FOCUS))
                 .offerTo(exporter, new Identifier("fire_focus_craft"));
+        // shapeless recipe - create air focus
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.AIR_FOCUS, 1)
                 .input(ModItems.AIR_ESSENCE)
                 .input(ModItems.EMPTY_FOCUS)
                 .criterion(hasItem(ModItems.AIR_ESSENCE), conditionsFromItem(ModItems.AIR_ESSENCE))
                 .criterion(hasItem(ModItems.EMPTY_FOCUS), conditionsFromItem(ModItems.EMPTY_FOCUS))
                 .offerTo(exporter, new Identifier("air_focus_craft"));
+        // shapeless recipe - create corruption focus
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CORRUPTION_FOCUS, 1)
                 .input(ModItems.CORRUPTION_ESSENCE)
                 .input(ModItems.EMPTY_FOCUS)
                 .criterion(hasItem(ModItems.CORRUPTION_ESSENCE), conditionsFromItem(ModItems.CORRUPTION_ESSENCE))
                 .criterion(hasItem(ModItems.EMPTY_FOCUS), conditionsFromItem(ModItems.EMPTY_FOCUS))
                 .offerTo(exporter, new Identifier("corruption_focus_craft"));
+        // shapeless recipe - create magic focus
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.MAGIC_FOCUS, 1)
                 .input(ModItems.MAGIC_ESSENCE)
                 .input(ModItems.EMPTY_FOCUS)
                 .criterion(hasItem(ModItems.MAGIC_ESSENCE), conditionsFromItem(ModItems.MAGIC_ESSENCE))
                 .criterion(hasItem(ModItems.EMPTY_FOCUS), conditionsFromItem(ModItems.EMPTY_FOCUS))
                 .offerTo(exporter, new Identifier("magic_focus_craft"));
+        // shapeless recipe - create nature focus
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.NATURE_FOCUS, 1)
                 .input(ModItems.NATURE_ESSENCE)
                 .input(ModItems.EMPTY_FOCUS)
                 .criterion(hasItem(ModItems.NATURE_ESSENCE), conditionsFromItem(ModItems.NATURE_ESSENCE))
                 .criterion(hasItem(ModItems.EMPTY_FOCUS), conditionsFromItem(ModItems.EMPTY_FOCUS))
                 .offerTo(exporter, new Identifier("nature_focus_craft"));
+        // shapeless recipe - create necrotic focus
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.NECROTIC_FOCUS, 1)
                 .input(ModItems.NECROTIC_ESSENCE)
                 .input(ModItems.EMPTY_FOCUS)
                 .criterion(hasItem(ModItems.NECROTIC_ESSENCE), conditionsFromItem(ModItems.NECROTIC_ESSENCE))
                 .criterion(hasItem(ModItems.EMPTY_FOCUS), conditionsFromItem(ModItems.EMPTY_FOCUS))
                 .offerTo(exporter, new Identifier("necrotic_focus_craft"));
+        // shapeless recipe - create water focus
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.WATER_FOCUS, 1)
                 .input(ModItems.WATER_ESSENCE)
                 .input(ModItems.EMPTY_FOCUS)
@@ -119,6 +135,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.EMPTY_FOCUS), conditionsFromItem(ModItems.EMPTY_FOCUS))
                 .offerTo(exporter, new Identifier("water_focus_craft"));
 
+        // example recipes
         /*
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RYFT_INGOT, 1)
                 .input(ModItems.RYFT_CRYSTAL)

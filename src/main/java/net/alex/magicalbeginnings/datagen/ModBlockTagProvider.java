@@ -18,6 +18,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         super(output, registriesFuture);
     }
 
+    /**
+     * create and build tags for blocks
+     *
+     * @param arg ?
+     */
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ModTags.Blocks.RYFT_ORES)

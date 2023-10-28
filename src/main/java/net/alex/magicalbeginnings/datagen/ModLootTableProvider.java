@@ -24,6 +24,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         super(dataOutput);
     }
 
+    /**
+     * Generate the loot tables for blocks (what they drop when destroyed)
+     */
     @Override
     public void generate() {
         addDrop(ModBlocks.RYFT_BLOCK);
@@ -37,6 +40,16 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     }
 
+    /**
+     * A loot table builder for ores
+     *
+     * @param ore the block
+     * @param drop the item that drops from the block
+     * @param min the min number of items to drop
+     * @param max the max number of items to drop
+     *
+     * @return a loot table builder
+     */
     private LootTable.Builder oreDrops(Block ore, Item drop, Float min, Float max){
         return BlockLootTableGenerator.dropsWithSilkTouch(ore, (LootPoolEntry.Builder)this.applyExplosionDecay(drop,((LeafEntry.Builder)
                 ItemEntry.builder(drop).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(min, max))))

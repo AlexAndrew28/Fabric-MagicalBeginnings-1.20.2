@@ -35,16 +35,35 @@ public class ModBlocks {
     public static final Block RYFT_IMBUING_STATION = registerBlock("ryft_imbuing_station",
             new RyftImbuingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
+    /**
+     * Register a block
+     *
+     * @param name the name of the block
+     * @param block the block object
+     *
+     * @return the block registered
+     */
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(MagicalBeginnings.MOD_ID, name), block);
     }
 
+    /**
+     * Register the item version of a block
+     *
+     * @param name the name of the item
+     * @param block the block object
+     *
+     * @return the block item registered
+     */
     private static Item registerBlockItem(String name, Block block){
         return Registry.register(Registries.ITEM, new Identifier(MagicalBeginnings.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
     }
 
+    /**
+     * Log that the blocks are being registered
+     */
     public static void registerModBlocks(){
         MagicalBeginnings.LOGGER.info("Registering ModBlocks for " + MagicalBeginnings.MOD_ID);
     }

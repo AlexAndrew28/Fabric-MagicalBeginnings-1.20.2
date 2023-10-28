@@ -26,21 +26,55 @@ public class RyftImbuingStationBlock extends BlockWithEntity implements BlockEnt
         super(settings);
     }
 
+    /**
+     * Gets the visual dimensions of the block
+     *
+     * @param state state of the block
+     * @param world the world
+     * @param pos the position of the block in the world
+     * @param context ?
+     *
+     * @return The dimensions of the block
+     */
     @Override
     public VoxelShape getOutlineShape(BlockState state, net.minecraft.world.BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
 
+    /**
+     * Gets the render type model
+     *
+     * @param state the current state of the block
+     *
+     * @return The model of the block render type
+     */
     public BlockRenderType getRenderType(BlockState state){
         return BlockRenderType.MODEL;
     }
 
+    /**
+     * Creates a new entity of the block
+     *
+     * @param pos the position of the block in the world
+     * @param state the current state of the block
+     *
+     * @return a new ryft imbuing station block entity
+     */
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new RyftImbuingStationBlockEntity(pos, state);
     }
 
+    /**
+     * Called if the block state has changed. For example if the block is removed
+     *
+     * @param state the old state of the block
+     * @param world the world
+     * @param pos the position of the block in the world
+     * @param newState the new state of the block
+     * @param moved ?
+     */
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
@@ -53,11 +87,25 @@ public class RyftImbuingStationBlock extends BlockWithEntity implements BlockEnt
         }
     }
 
+    /**
+     * Called when the block is clicked on by the player
+     *
+     * @param state the current state of the block
+     * @param world the world
+     * @param pos the position of the block in the world
+     * @param player the player that clicked the block
+     * @param hand clicked with the main hand or offhand
+     * @param hit how the block was hit
+     *
+     * @return if the action was a success
+     */
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
+            // does not happen on the client
             NamedScreenHandlerFactory screenHandlerFactory = ((RyftImbuingStationBlockEntity) world.getBlockEntity(pos));
 
+            // opens the block gui
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);
             }
@@ -66,6 +114,15 @@ public class RyftImbuingStationBlock extends BlockWithEntity implements BlockEnt
         return ActionResult.SUCCESS;
     }
 
+    /**
+     * A ticker ?
+     *
+     * @param world the world
+     * @param state the state of the block
+     * @param type the type of the block entity
+     *
+     * @return a validated ticker ??
+     */
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {

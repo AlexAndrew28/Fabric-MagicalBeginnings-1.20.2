@@ -10,10 +10,17 @@ import net.minecraft.text.Text;
 import net.minecraft.util.profiling.jfr.event.ServerTickTimeEvent;
 
 public class PlayerTickHandler implements ServerTickEvents.StartTick {
+    /**
+     * Called on the start of te server ticks to update the mana level of the player
+     *
+     * @param server the server
+     */
     @Override
     public void onStartTick(MinecraftServer server) {
         for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
             IEntityDataSaver dataPlayer = ((IEntityDataSaver) player);
+
+            // regen mana
             ManaData.regenMana(dataPlayer);
         }
     }

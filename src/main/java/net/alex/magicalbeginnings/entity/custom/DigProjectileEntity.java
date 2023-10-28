@@ -19,6 +19,7 @@ public class DigProjectileEntity extends PersistentProjectileEntity {
     public DigProjectileEntity(World world, LivingEntity owner) {
         super(ModEntities.DIG_PROJECTILE, owner, world);
 
+        // this projectile not affected by gravity
         setNoGravity(true);
     }
 
@@ -31,16 +32,22 @@ public class DigProjectileEntity extends PersistentProjectileEntity {
         return null;
     }
 
+    /**
+     * Called when the projectile hits a block
+     *
+     * @param blockHitResult data about the block hit
+     */
     protected void onBlockHit(BlockHitResult blockHitResult) {
         super.onBlockHit(blockHitResult);
 
         if (this.getWorld().isClient) {
+            // don't run on client
             return;
         }
-
         this.discard();
-        BlockPos blockPos = blockHitResult.getBlockPos();
 
+        // check the hardness of the block hit
+        BlockPos blockPos = blockHitResult.getBlockPos();
         float blockHardness = this.getWorld().getBlockState(blockPos).getHardness(this.getWorld(), blockPos);
 
         // cannot mine bedrock (hardness -1) and obsidian+ (hardness 50)
@@ -49,11 +56,19 @@ public class DigProjectileEntity extends PersistentProjectileEntity {
         }
     }
 
+    /**
+     * get the drag coefficient for projectile as it travels through water
+     *
+     * @return drag coefficient
+     */
     protected float getDragInWater() {
-        //this.kill();
+        // spells can go through water same as air
         return 1.0f;
     }
 
+    /**
+     * called every tick to update position of projectile
+     */
     public void tick() {
         super.tick();
         if (this.getWorld().isClient) {
@@ -72,6 +87,11 @@ public class DigProjectileEntity extends PersistentProjectileEntity {
 
     }
 
+    /**
+     * spawns particles around the projectile as it flies for effect
+     *
+     * @param amount amount of particles to spawn
+     */
     private void spawnParticles(int amount) {
         double d = 230;
         double e = 116;
@@ -86,6 +106,12 @@ public class DigProjectileEntity extends PersistentProjectileEntity {
         super.onHit(target);
     }
 
+    /**
+     * Overrides to projectile cannot hit entities
+     *
+     * @param entity entity to check
+     * @return false
+     */
     @Override
     protected boolean canHit(Entity entity) {
         return false;

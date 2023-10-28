@@ -27,7 +27,16 @@ public class EarthWandItem extends Item {
         super(settings);
     }
 
-
+    /**
+     * Called when the player right clicks with the item in their hand
+     * Effect: player shoots a projectile that instantly digs the block it hits (under obsidian)
+     *
+     * @param world the world the item was used in
+     * @param user the player who used the item
+     * @param hand the hand used
+     *
+     * @return the success of the action
+     */
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 
         ItemStack wand = new ItemStack(ModItems.EARTH_WAND);
@@ -38,20 +47,23 @@ public class EarthWandItem extends Item {
 
             int currentMana = ((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("currentMana");
 
+            // if player has enough mana
             if (currentMana > manaCost){
                 ClientPlayNetworking.send(ModMessages.USE_MANA, PacketByteBufs.create().writeInt(manaCost));
 
+                // update saved player data
                 ClientPlayNetworking.send(ModMessages.INCREASE_MAGIC_EXP, PacketByteBufs.create().writeInt(expGain));
                 DigProjectileEntity persistentProjectileEntity = new DigProjectileEntity(world, user);
 
+                // create a new projectile
                 persistentProjectileEntity.setVelocity(user, user.getPitch(), user.getYaw(), 1.5f, 1.5f, 0f);
 
                 Vec3d vel = persistentProjectileEntity.getVelocity();
 
+                // update the projectiles position so it spawns in front of the player
                 double x = persistentProjectileEntity.getX();
                 double y = persistentProjectileEntity.getY();
                 double z = persistentProjectileEntity.getZ();
-
                 double newX = x + vel.x;
                 double newY = y + vel.y;
                 double newZ = z + vel.z;

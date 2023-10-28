@@ -29,21 +29,34 @@ public class EarthAmuletItem extends Item {
         super(settings);
     }
 
+    /**
+     * Called when the player right clicks with the item in their hand
+     * Effect: player gains protection buff
+     *
+     * @param world the world the item was used in
+     * @param user the player who used the item
+     * @param hand the hand used
+     *
+     * @return the success of the action
+     */
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 
         ItemStack wand = new ItemStack(ModItems.EARTH_AMULET);
 
-
+        // cooldown for using the item
         user.getItemCooldownManager().set(this, 2);
         if (!world.isClient) {
 
             int currentMana = ((IEntityDataSaver) MinecraftClient.getInstance().player).getPersistentData().getInt("currentMana");
 
+            // check that the player has enough mana
             if (currentMana > manaCost){
+                // reduce mana by mana cost
                 ClientPlayNetworking.send(ModMessages.USE_MANA, PacketByteBufs.create().writeInt(manaCost));
-
+                // increase magic exp
                 ClientPlayNetworking.send(ModMessages.INCREASE_MAGIC_EXP, PacketByteBufs.create().writeInt(expGain));
 
+                // add the protection buff
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 200, 1));
 
             }else{

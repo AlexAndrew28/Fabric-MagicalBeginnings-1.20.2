@@ -13,6 +13,11 @@ public class ModModelProvider extends FabricModelProvider {
         super(output);
     }
 
+    /**
+     * generate model data for blocks
+     *
+     * @param blockStateModelGenerator a generator
+     */
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RYFT_BLOCK);
@@ -25,6 +30,11 @@ public class ModModelProvider extends FabricModelProvider {
 
     }
 
+    /**
+     * generate model data for items
+     *
+     * @param itemModelGenerator a generator
+     */
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.RYFT_CRYSTAL, Models.GENERATED);

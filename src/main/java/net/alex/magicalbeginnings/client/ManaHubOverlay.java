@@ -19,16 +19,17 @@ public class ManaHubOverlay implements HudRenderCallback {
 
     @Override
     public void onHudRender(DrawContext drawContext, float tickDelta) {
-        int text_x = 0;
-        int text_y = 0;
+        int text_x;
+        int text_y;
 
-        int bar_x = 0;
-        int bar_y = 0;
-        int bar_u = 0;
-        int bar_v = 0;
-        int bar_width = 0;
-        int bar_height = 0;
-        int mana_bar_width = 0;
+        int bar_x;
+        int bar_y;
+        int bar_u;
+        int bar_v;
+        int bar_width;
+        int bar_height;
+        int mana_bar_width;
+        float manaPercentage;
 
         int border_width = 1;
 
@@ -37,21 +38,26 @@ public class ManaHubOverlay implements HudRenderCallback {
         TextRenderer fontRenderer = client.textRenderer;
 
         if (client != null){
+            // only happen if client exists (this stops crashing when rendering to a client that does not exist)
+
+            // get screen size
             int width = client.getWindow().getScaledWidth();
             int height = client.getWindow().getScaledHeight();
 
             text_x = (int) (width*0.85);
             text_y = (int) (height*0.85);
 
+            // get current saved mana data
             int currentMana = ((IEntityDataSaver) client.player).getPersistentData().getInt("currentMana");
             int maxMana = ((IEntityDataSaver) client.player).getPersistentData().getInt("maxMana");
 
+            // only display if you have a max mana of above 0
             if (maxMana != 0){
+
+                // number stats
                 String text = currentMana + " / " + maxMana;
 
                 drawContext.drawCenteredTextWithShadow(fontRenderer, text, text_x, text_y, textColor);
-
-                float manaPercentage = 0;
 
                 manaPercentage = (float) currentMana / maxMana;
 
@@ -63,16 +69,16 @@ public class ManaHubOverlay implements HudRenderCallback {
                 mana_bar_width =  (int) (bar_width * manaPercentage);
                 bar_height = 10;
 
+                // border of the mana bar
                 Identifier BORDER_TEXTURE = new Identifier(MagicalBeginnings.MOD_ID, "textures/hud/border_mana_bar.png");
-
                 drawContext.drawTexture(BORDER_TEXTURE, bar_x-border_width, bar_y-border_width, bar_u, bar_v, bar_width+border_width*2, bar_height+border_width*2);
 
+                // background of the mana bar
                 Identifier BG_TEXTURE = new Identifier(MagicalBeginnings.MOD_ID, "textures/hud/bg_mana_bar.png");
-
                 drawContext.drawTexture(BG_TEXTURE, bar_x, bar_y, bar_u, bar_v, bar_width, bar_height);
 
+                // foreground of the mana bar
                 Identifier TEXTURE = new Identifier(MagicalBeginnings.MOD_ID, "textures/hud/mana_bar.png");
-
                 drawContext.drawTexture(TEXTURE, bar_x, bar_y, bar_u, bar_v, mana_bar_width, bar_height);
             }
 
