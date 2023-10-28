@@ -21,6 +21,8 @@ public class ModItems {
 
     public static Item RUBY_WAND = registerItem("ruby_wand", new RubyWandItem(new FabricItemSettings().maxCount(1)));
     public static Item SAPPHIRE_WAND = registerItem("sapphire_wand", new SapphireWandItem(new FabricItemSettings().maxCount(1)));
+    public static Item EARTH_AMULET = registerItem("earth_amulet", new EarthAmuletItem(new FabricItemSettings().maxCount(1)));
+    public static Item SKY_AMULET = registerItem("sky_amulet", new SkyAmuletItem(new FabricItemSettings().maxCount(1)));
 
 
     public static Item EMPTY_FOCUS = registerItem("empty_focus", new Item(new FabricItemSettings()));
