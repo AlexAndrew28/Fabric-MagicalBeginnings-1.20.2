@@ -24,6 +24,7 @@ public class SkyAmuletItem extends Item {
     private static final int manaCost = 50;
     private static final int expGain = 10;
 
+    boolean actionSuccess = false;
 
     public SkyAmuletItem(Settings settings) {
         super(settings);
@@ -57,13 +58,23 @@ public class SkyAmuletItem extends Item {
 
                 user.sendMessage(Text.literal("find out how to add player vel properly"));
 
-                //TODO not working -- fix this
+                actionSuccess = true;
+
+                //TODO make this a bit nicer and look to see if need to update on server as well
 
 
             }else{
                 user.sendMessage(Text.literal("Not Enough Mana"));
             }
 
+        }
+
+        if (world.isClient){
+            if(actionSuccess){
+                user.addVelocity(0, 2, 0);
+
+                actionSuccess = false;
+            }
         }
 
         return TypedActionResult.success(wand);
