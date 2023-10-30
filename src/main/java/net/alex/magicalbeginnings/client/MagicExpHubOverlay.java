@@ -10,8 +10,6 @@ import net.minecraft.util.Identifier;
 
 public class MagicExpHubOverlay implements HudRenderCallback {
 
-    private int textColor = -156093195;
-
     /**
      * Called to render the magic exp bar
      *
@@ -20,16 +18,6 @@ public class MagicExpHubOverlay implements HudRenderCallback {
      */
     @Override
     public void onHudRender(DrawContext drawContext, float tickDelta) {
-
-        int text_x;
-        int text_y;
-        int bar_x;
-        int bar_y;
-        int bar_u;
-        int bar_v;
-        int bar_width;
-        int bar_height;
-        int magic_exp_bar_width;
 
         MinecraftClient client = MinecraftClient.getInstance();
 
@@ -42,8 +30,8 @@ public class MagicExpHubOverlay implements HudRenderCallback {
             int width = client.getWindow().getScaledWidth();
             int height = client.getWindow().getScaledHeight();
 
-            text_x = (int) (width*0.5);
-            text_y = height-46;
+            int textX = (int) (width*0.5);
+            int textY = height-46;
 
             // get the current magic exp level data
             int magicExpLevel = ((IEntityDataSaver) client.player).getPersistentData().getInt("magicLevel");
@@ -55,27 +43,24 @@ public class MagicExpHubOverlay implements HudRenderCallback {
                 String text = "" + magicExpLevel;
 
                 // draw the magic level as text on the screen
-                drawContext.drawCenteredTextWithShadow(fontRenderer, text, text_x, text_y, textColor);
+                int textColor = -156093195;
+                drawContext.drawCenteredTextWithShadow(fontRenderer, text, textX, textY, textColor);
 
-                float magicExpPercentage = 0;
+                float magicExpPercentage = (float) magicExpLevelCurrent / magicExpLevelNeeded;
 
-                magicExpPercentage = (float) magicExpLevelCurrent / magicExpLevelNeeded;
-
-                bar_x = (int) (width*0.3);
-                bar_y = height-50;
-                bar_u = 0;
-                bar_v = 0;
-                bar_width = (int) (width*0.4);
-                magic_exp_bar_width =  (int) (bar_width * magicExpPercentage);
-                bar_height = 5;
+                int barX = (int) (width*0.3);
+                int barY = height-50;
+                int barWidth = (int) (width*0.4);
+                int magicExpBarWidth =  (int) (barWidth * magicExpPercentage);
+                int barHeight = 5;
 
                 // draw the background of the exp bar
                 Identifier BG_TEXTURE = new Identifier(MagicalBeginnings.MOD_ID, "textures/hud/magic_exp_bar_background.png");
-                drawContext.drawTexture(BG_TEXTURE, bar_x, bar_y, bar_u, bar_v, bar_width, bar_height, 182, 5);
+                drawContext.drawTexture(BG_TEXTURE, barX, barY, 0, 0, barWidth, barHeight, 182, 5);
 
                 // draw the foreground of the exp bar (length depends on amount of exp towards next level)
                 Identifier TEXTURE = new Identifier(MagicalBeginnings.MOD_ID, "textures/hud/magic_exp_bar_foreground.png");
-                drawContext.drawTexture(TEXTURE, bar_x, bar_y, bar_u, bar_v, magic_exp_bar_width, bar_height, 182, 5);
+                drawContext.drawTexture(TEXTURE, barX, barY, 0, 0, magicExpBarWidth, barHeight, 182, 5);
             }
 
         }
