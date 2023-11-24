@@ -47,4 +47,17 @@ public abstract class ModelLoaderMixin {
     public void addSapphireWand(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
         this.addModel(new ModelIdentifier(MagicalBeginnings.MOD_ID, "sapphire_wand_3d", "inventory"));
     }
+
+    /**
+     * Overrides the model loader for the sky amulet
+     *
+     * @param blockColors the colours
+     * @param profiler a profiler
+     * @param jsonUnbakedModels unbaked model
+     * @param blockStates the state
+     * @param ci callback information
+     */
+    public void addSkyAmulet(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
+        this.addModel(new ModelIdentifier(MagicalBeginnings.MOD_ID, "sky_amulet_3d", "inventory"));
+    }
 }
