@@ -1,9 +1,7 @@
 package net.alex.magicalbeginnings.entity;
 
 import net.alex.magicalbeginnings.MagicalBeginnings;
-import net.alex.magicalbeginnings.entity.custom.DigProjectileEntity;
-import net.alex.magicalbeginnings.entity.custom.FireballEntity;
-import net.alex.magicalbeginnings.entity.custom.WaterballEntity;
+import net.alex.magicalbeginnings.entity.custom.*;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
@@ -36,6 +34,21 @@ public class ModEntities {
             Registries.ENTITY_TYPE,
             new Identifier(MagicalBeginnings.MOD_ID,"dig_projectile"),
             FabricEntityTypeBuilder.<DigProjectileEntity>create(SpawnGroup.MISC, DigProjectileEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.5F, 0.5F))
+                    .build());
+
+
+    public static final EntityType<TeleportOrbEntity> TELEPORT_ORB = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(MagicalBeginnings.MOD_ID,"teleport_orb"),
+            FabricEntityTypeBuilder.<TeleportOrbEntity>create(SpawnGroup.MISC, TeleportOrbEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.5F, 0.5F))
+                    .build());
+
+    public static final EntityType<LocationMarkOrbEntity> LOCATION_MARK_ORB = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(MagicalBeginnings.MOD_ID,"location_mark_orb"),
+            FabricEntityTypeBuilder.<LocationMarkOrbEntity>create(SpawnGroup.MISC, LocationMarkOrbEntity::new)
                     .dimensions(EntityDimensions.fixed(0.5F, 0.5F))
                     .build());
 }
