@@ -60,4 +60,8 @@ public abstract class ModelLoaderMixin {
     public void addSkyAmulet(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
         this.addModel(new ModelIdentifier(MagicalBeginnings.MOD_ID, "sky_amulet_3d", "inventory"));
     }
+
+    public void addEarthWand(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
+        this.addModel(new ModelIdentifier(MagicalBeginnings.MOD_ID, "earth_wand_3d", "inventory"));
+    }
 }

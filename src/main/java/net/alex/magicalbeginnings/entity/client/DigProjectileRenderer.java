@@ -10,7 +10,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
 public class DigProjectileRenderer extends ProjectileEntityRenderer<DigProjectileEntity> {
-    private static final Identifier TEXTURE = new Identifier(MagicalBeginnings.MOD_ID, "textures/entity/waterball.png");
+    private static final Identifier TEXTURE = new Identifier(MagicalBeginnings.MOD_ID, "textures/entity/earthball.png");
 
     public DigProjectileRenderer(EntityRendererFactory.Context context) {
         super(context);
