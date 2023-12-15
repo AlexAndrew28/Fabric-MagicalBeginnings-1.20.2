@@ -19,6 +19,10 @@ public class DigProjectileEntity extends PersistentProjectileEntity {
     public DigProjectileEntity(World world, LivingEntity owner) {
         super(ModEntities.DIG_PROJECTILE, owner, world);
 
+        // base damage of the spell
+        double damage = 0;
+        super.setDamage(damage);
+
         // this projectile not affected by gravity
         setNoGravity(true);
     }

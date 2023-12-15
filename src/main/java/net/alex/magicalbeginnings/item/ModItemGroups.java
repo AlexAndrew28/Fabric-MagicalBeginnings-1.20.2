@@ -26,6 +26,10 @@ public class ModItemGroups {
                         entries.add(ModItems.SKY_AMULET);
                         entries.add(ModItems.EARTH_WAND);
 
+                        entries.add(ModItems.MARKING_WAND);
+                        entries.add(ModItems.TELEPORTING_AMULET);
+                        entries.add(ModItems.TELEPORTING_WAND);
+
                         entries.add(ModItems.BLUE_BERRY);
                         entries.add(ModItems.BLACK_BERRY);
 

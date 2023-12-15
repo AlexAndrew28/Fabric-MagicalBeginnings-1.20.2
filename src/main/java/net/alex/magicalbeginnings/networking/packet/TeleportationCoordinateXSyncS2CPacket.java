@@ -23,7 +23,7 @@ public class TeleportationCoordinateXSyncS2CPacket {
     public static void receive(MinecraftClient client, ClientPlayNetworkHandler handler,
                                PacketByteBuf buf, PacketSender responseSender){
         if(client.player != null){
-            ((IEntityDataSaver) client.player).getPersistentData().putDouble("teleportationCoordinateX", buf.readVec3d().getX());
+            ((IEntityDataSaver) client.player).getPersistentData().putDouble("teleportationCoordinateX", buf.readDouble());
         }
 
     }

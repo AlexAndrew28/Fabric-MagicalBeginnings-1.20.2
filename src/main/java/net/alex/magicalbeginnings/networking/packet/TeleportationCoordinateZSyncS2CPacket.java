@@ -23,7 +23,7 @@ public class TeleportationCoordinateZSyncS2CPacket {
     public static void receive(MinecraftClient client, ClientPlayNetworkHandler handler,
                                PacketByteBuf buf, PacketSender responseSender){
         if(client.player != null){
-            ((IEntityDataSaver) client.player).getPersistentData().putDouble("teleportationCoordinateZ", buf.readVec3d().getZ());
+            ((IEntityDataSaver) client.player).getPersistentData().putDouble("teleportationCoordinateZ", buf.readDouble());
         }
 
     }

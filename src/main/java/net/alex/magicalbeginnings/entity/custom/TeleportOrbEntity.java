@@ -17,7 +17,7 @@ public class TeleportOrbEntity extends PersistentProjectileEntity {
     public TeleportOrbEntity(World world, LivingEntity owner) {
         super(ModEntities.TELEPORT_ORB, owner, world);
 
-        // base damage of the fireball
+        // base damage of the spell
         double damage = 0;
         super.setDamage(damage);
 
@@ -85,7 +85,7 @@ public class TeleportOrbEntity extends PersistentProjectileEntity {
         double e = 116;
         double f = 30;
         for (int j = 0; j < amount; ++j) {
-            this.getWorld().addParticle(ParticleTypes.ELECTRIC_SPARK, this.getParticleX(0.5), this.getRandomBodyY(), this.getParticleZ(0.5), d, e, f);
+            this.getWorld().addParticle(ParticleTypes.GLOW, this.getParticleX(0.5), this.getRandomBodyY(), this.getParticleZ(0.5), d, e, f);
         }
     }
 

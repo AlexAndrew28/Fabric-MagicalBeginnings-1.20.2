@@ -34,7 +34,7 @@ public class TeleportationData {
     public static void updateCoordinateZ(IEntityDataSaver player, double z){
         NbtCompound nbt = player.getPersistentData();
 
-        nbt.putDouble("teleportationCoordinateX", z);
+        nbt.putDouble("teleportationCoordinateZ", z);
 
         syncCoordinateZ(z, (ServerPlayerEntity) player);
     }

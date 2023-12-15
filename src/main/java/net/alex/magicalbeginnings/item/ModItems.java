@@ -24,6 +24,9 @@ public class ModItems {
     public static Item EARTH_AMULET = registerItem("earth_amulet", new EarthAmuletItem(new FabricItemSettings().maxCount(1)));
     public static Item SKY_AMULET = registerItem("sky_amulet", new SkyAmuletItem(new FabricItemSettings().maxCount(1)));
     public static Item EARTH_WAND = registerItem("earth_wand", new EarthWandItem(new FabricItemSettings().maxCount(1)));
+    public static Item MARKING_WAND = registerItem("marking_wand", new MarkingWandItem(new FabricItemSettings().maxCount(1)));
+    public static Item TELEPORTING_AMULET = registerItem("teleporting_amulet", new TeleportingAmuletItem(new FabricItemSettings().maxCount(1)));
+    public static Item TELEPORTING_WAND = registerItem("teleporting_wand", new TeleportingWandItem(new FabricItemSettings().maxCount(1)));
 
 
     public static Item EMPTY_FOCUS = registerItem("empty_focus", new Item(new FabricItemSettings()));
